@@ -2,7 +2,7 @@
 
 export default (req, res) => {
   let content = {
-    itemtype: "application/vnd.lime.document-select+json",
+    itemType: "application/vnd.lime.document-select+json",
     items: []
   };
   fetch("https://api.github.com/orgs/takenet/repos?sort=created&direction=asc")
