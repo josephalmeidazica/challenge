@@ -5,10 +5,12 @@ export default (req, res) => {
     itemtype: "application/vnd.lime.document-select+json",
     items: []
   };
-  fetch("https://api.github.com/orgs/takenet/repos?q=language:C#&limit:5&order:asc")
+  fetch("https://api.github.com/orgs/takenet/repos?sort=created&direction=asc")
   .then(response => response.json())
   .then(json => {
-    json.map(dado => { content.items.push( {
+    json.map(dado => {
+      if(dado.language === "C#"){
+      content.items.push( {
       header:{
         type: "application/vnd.lime.media-link+json",
         value: {
@@ -19,10 +21,11 @@ export default (req, res) => {
             aspectRatio: "1:1",
         },
       },
-    })
+    })}
+
   })
     res.statusCode = 200
-    res.json({ content })
+    res.json( content.items.slice(0,5) )
     });
 }
 
