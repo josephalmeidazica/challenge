@@ -1,10 +1,10 @@
 ## Informações sobre o projeto
 
-API desenvolvida com Next.js.
+API desenvolvida com [Next.js](https://nextjs.org/docs).
 Publicado na [Vercel](https://vercel.com).
-
-
+Para rodar localmente -> [http://localhost:3000](http://localhost:3000).
 Gerenciamento de pacotes JS feito com [yarn](https://yarnpkg.com/)
+
 ```bash
 yarn
 yarn build
@@ -12,7 +12,4 @@ yarn dev
 ```
 
 API endpoint -> `pages/api/hello.js`.
-
-Porta padrão 3000 [http://localhost:3000](http://localhost:3000).
-
-- [Documentação Next.js ](https://nextjs.org/docs).
+ChatBot Flow - > `Flow/loraFlow.json`.
