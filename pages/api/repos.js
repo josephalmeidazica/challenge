@@ -9,7 +9,7 @@ export default (req, res) => {
   .then(response => response.json())
   .then(json => {
     json.map(dado => {
-      if(dado.language === "C#"){
+      if(dado.language === "C#" && content.items.length < 5){
       content.items.push( {
       header:{
         type: "application/vnd.lime.media-link+json",
@@ -22,10 +22,9 @@ export default (req, res) => {
         },
       },
     })}
-
   })
     res.statusCode = 200
-    res.json( content.items.slice(0,5) )
+    res.json( content )
     });
 }
 
